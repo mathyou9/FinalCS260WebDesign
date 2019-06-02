@@ -1,0 +1,86 @@
+/*
+color scheme
+used adobe color @ color.adobe.com/create
+== Color Theme Swatches in Hex ==
+.website-for-exam-1-hex { color: #B36646; }
+.website-for-exam-2-hex { color: #A1FF73; }
+.website-for-exam-3-hex { color: #FF8754; }
+.website-for-exam-4-hex { color: #545CCC; }
+.website-for-exam-5-hex { color: #2833B8; }
+
+== Color Theme Swatches in RGBA ==
+.website-for-exam-1-rgba { color: rgba(179, 102, 70, 1); }
+.website-for-exam-2-rgba { color: rgba(161, 255, 115, 1); }
+.website-for-exam-3-rgba { color: rgba(255, 135, 84, 1); }
+.website-for-exam-4-rgba { color: rgba(84, 92, 204, 1); }
+.website-for-exam-5-rgba { color: rgba(40, 51, 184, 1); }
+
+== Color Theme Swatches in HSLA ==
+.website-for-exam-1-hsla { color: hsla(17, 43, 48, 1); }
+.website-for-exam-2-hsla { color: hsla(100, 100, 72, 1); }
+.website-for-exam-3-hsla { color: hsla(17, 100, 66, 1); }
+.website-for-exam-4-hsla { color: hsla(236, 54, 56, 1); }
+.website-for-exam-5-hsla { color: hsla(235, 64, 43, 1); }
+*/
+
+body {
+  font-family: 'Gamja Flower', cursive;
+  font-size: 2vh;
+  padding: 0px;
+  margin: 0px;
+  background-color: rgba(40,40,40,1);
+  color: rgba(240,240,240,1);
+  text-align: center;
+}
+h1{
+  text-align: center;
+  padding: 2vh;
+  margin: 0px;
+}
+.header{
+  width: 100vw;
+  height: 10vh;
+  padding: 0vh;
+  margin: 0px;
+  position: relative;
+  top: 0px;
+  background-color: #2833B8;
+}
+
+/* List */
+ul {
+  list-style: none;
+  padding-top: 5vh;
+  height: 100%;
+  margin: 0px;
+  background-color: rgba(40,40,40,1);
+  width: 90vw;
+  position: relative;
+  left: 4vw;
+}
+
+li {
+  display: inline-block;
+  height: 20vh;
+  padding: .5vw;
+  width: 26vw;
+  padding-bottom: 15vh;
+}
+
+img {
+  width: 20vw;
+  border-radius: 1vh;
+  vertical-align: middle;
+  box-shadow: 0vw 0vw 0vw .25vw #A1FF73;
+}
+p{
+  background-color: #FF8754;
+  color: rgba(40,40,40,1);
+  padding: .5vh;
+  border-radius: 1vh;
+  box-shadow: 0vw 0vw 0vw .25vw #A1FF73;
+}
+a{
+  text-decoration: none;
+  color: #2833B8;
+}

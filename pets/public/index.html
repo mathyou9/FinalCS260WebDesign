@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous">
+  <link rel="stylesheet" href="/styles.css" />
+  <title>Bark Meow</title>
+</head>
+
+<body>
+  <div class="pure-menu pure-menu-horizontal">
+    <span class="pure-menu-heading">Bark Meow</span>
+  </div>
+  <h1>Client Portal</h1>
+  <div id="app">
+    <button class="pure-button pure-button-primary" @click="showAddClientModal">Add Client</button>
+    <h2>Clients</h2>
+    <div class="client" v-for="client in clients" :key="client._id" @click="selectClient(client)">
+      <h3>{{client.name}}</h3>
+      <p>{{client.address}}</p>
+      <p>{{client.phone}}</p>
+    </div>
+
+    <!-- Add Client Modal -->
+    <transition v-if="showAddClient" name="modal">
+      <div class="modal-mask">
+        <div class="modal-wrapper">
+          <div class="modal-container">
+            <div class="modal-header">
+              <h1 class="modal-title">Add Client</h1>
+            </div>
+            <div class="modal-body">
+              <p v-if="error" class="error">{{error}}</p>
+              <form @submit.prevent="addClient">
+                <input v-model="clientName" placeholder="Name">
+                <p></p>
+                <input v-model="clientAddress" placeholder="Address">
+                <p></p>
+                <input v-model="clientPhone" placeholder="Phone">
+                <p></p>
+                <button type="button" @click="closeAddClientModal" class="pure-button">Close</button>
+                <button type="submit" class="pure-button pure-button-primary">Add Client</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </transition>
+
+    <!-- View Client Modal -->
+    <transition v-if="showViewClient" name="modal">
+      <div class="modal-mask">
+        <div class="modal-wrapper">
+          <div class="modal-container">
+            <div class="modal-header">
+              <h1 class="modal-title">Client</h1>
+            </div>
+            <div class="modal-body">
+              <h3>{{client.name}}</h3>
+              <p>{{client.address}}</p>
+              <p>{{client.phone}}</p>
+              <p v-if="pets.length > 0">Pets:</p>
+              <ul>
+                <li class="pet" v-for="pet in pets" :key="pets._id">
+                  {{pet.name}}, {{pet.type}}
+                </li>
+              </ul>
+              <p v-if="error" class="error">{{error}}</p>
+              <form @submit.prevent="addPet(client)">
+                <input v-model="petName" placeholder="Name">
+                <p></p>
+                <input v-model="petType" placeholder="Type">
+                <p></p>
+                <button type="button" @click="closeViewClientModal" class="pure-button">Close</button>
+                <button type="submit" class="pure-button pure-button-primary">Add Pet</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </transition>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js" integrity="sha256-mpnrJ5DpEZZkwkE1ZgkEQQJW/46CSEh/STrZKOB/qoM=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.7/vue.js" integrity="sha256-g+Q8DFAmG5+eyRPSydX0LY4TfjsL11XSDrIGerbbEdA=" crossorigin="anonymous"></script>
+  <script src="/script.js"></script>
+</body>
+
+</html>

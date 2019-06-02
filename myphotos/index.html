@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<html>
+  <head>
+    <link href="https://fonts.googleapis.com/css?family=Gamja+Flower" rel="stylesheet">
+    <link rel="stylesheet" href="/styles.css" />
+    <title>My Photos</title>
+  </head>
+  <body>
+    <div id="app">
+      <div class="header">
+        <h1>My Photos</h1>
+      </div>
+      <ul>
+        <li v-for="photo in photos">
+          <img v-bind:src="photo.path">
+          <p>Photo by
+
+            {{ photo.attribution }}, Creative Commons, from <a v-bind:href="photo.original">Flickr</a></p>
+        </li>
+      </ul>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.16/vue.js" integrity="sha256-CMMTrj5gGwOAXBeFi7kNokqowkzbeL8ydAJy39ewjkQ=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js" integrity="sha256-mpnrJ5DpEZZkwkE1ZgkEQQJW/46CSEh/STrZKOB/qoM=" crossorigin="anonymous"></script>
+    <script src="/script.js"></script>
+  </body>
+</html>
